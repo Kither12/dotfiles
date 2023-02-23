@@ -195,6 +195,7 @@ gaps outer 20
 focus_follows_mouse no
 bindsym $mod+k exec start_workspace
 bindsym $mod+l exec i3lock-fancy-rapid 3 5
+bindsym $Alt+F4 exec reboot
 exec_always unfocused-border
 exec --no-startup-id devilspie -a
 
