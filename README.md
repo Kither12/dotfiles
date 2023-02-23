@@ -1,5 +1,5 @@
 # Kither's dotfiles
-My dotfiles for a tilling window manager on Arch withm i3wm. The configuration files based around Gruvbox theme. There are many things here specific to my setup, tweak as needed. Featuring custom configurations for some of the following plugins:
+My dotfiles for a tilling window manager on Arch with i3wm. The configuration files based around Gruvbox theme. There are many things here specific to my setup, tweak as needed. Featuring custom configurations for some of the following plugins:
 - Alacritty
 - Neo vim
 - VS code (I won't put it here)
@@ -13,7 +13,6 @@ My dotfiles for a tilling window manager on Arch withm i3wm. The configuration f
 # Current setup screenshot:
 ![Screenshot](https://i.imgur.com/sz7NUEP.png)
 ![Screenshot](https://i.imgur.com/QVb6N0O.png)
-![Screenshot](https://i.imgur.com/sz7NUEP.png)
 ![Screenshot](https://i.imgur.com/UqZsX9y.png)
 ![Screenshot](https://i.imgur.com/ZfFw31S.png)
 ![Screenshot](https://i.imgur.com/T5hSQA1.png)
