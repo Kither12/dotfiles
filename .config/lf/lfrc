@@ -1,0 +1,122 @@
+# Basic Settings
+set ignorecase true
+set icons true
+set drawbox
+set incsearch true
+set wrapscroll true
+
+cmd open
+
+# Custom Functions
+cmd mkdir ${{
+  mkdir "$@"
+}}
+
+cmd mkfile ${{
+  touch "$@"
+}}
+
+cmd trash ${{
+  trash-put "$f"
+}}
+
+cmd chmod ${{
+  for file in "$fx"
+  do
+    chmod "$@" $file
+  done
+}}
+
+cmd open ${{
+  if [ -d "$f" ] ; then 
+    cd "$f"
+  fi
+}}
+
+# Archive bindings
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+
+cmd delfile ${{
+  printf "Are you sure to delete those files?: "
+  read ans
+  if [ $ans != "ok" ]
+    then exit 0
+  fi
+  for file in "$fx"
+  do
+    if [ -d $file ] ; then
+      rm -r $file
+    else
+      rm $file
+    fi
+  done
+}}
+
+cmd cdat &{{
+  alacritty --working-directory "$f"
+}}
+
+cmd nvim &{{
+  nvim "$f"
+}}
+cmd code &{{
+  code "$f"    
+}}
+cmd openimg &{{
+    nsxiv "$f"
+}}
+cmd dragon %dragon-drop -a -x $fx
+cmd dragon-stay %dragon-drop -a $fx
+cmd dragon-individual %dragon-drop $fx
+
+# Bindings
+# Remove some defaults
+map m
+map o
+map n
+map "'"
+map '"'
+map d
+map y
+map p
+map c
+map i
+
+
+map dr dragon
+map da dragon-stay
+map di dragon-individual 
+
+map img openimg
+
+map nv nvim
+map co code
+
+map au unarchive
+
+# Basic Functions
+map . set hidden!
+
+map <enter> open
+map cd cdat
+
+map <c-v> paste
+map <c-x> cut
+map <c-c> copy
+map <c-z> clear
+
+map <esc> quit
+
+map R reload
+map mf push :mkfile<space>
+map md push :mkdir<space>
+map <c-d> delfile  
+map ch push :chmod<space>

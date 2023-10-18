@@ -1,0 +1,1 @@
+/home/kither/code/dotfiles/dotfiles/plain/common/.bashrc
